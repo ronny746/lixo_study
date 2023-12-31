@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "719983048017",
+    "project_id": "lixo-study-owner-acc",
+    "storage_bucket": "lixo-study-owner-acc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719983048017:android:b1b81600d04723f34a8f70",
+        "android_client_info": {
+          "package_name": "com.example.lixo_study"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApGkbTrjulT4ksrX57w6kVImoE4PGZzVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
