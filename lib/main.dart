@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:lixo_study/firebase_options.dart';
 import 'package:lixo_study/screens/mainpage.dart';
 import 'package:get/get.dart';
+import 'package:lixo_study/screens/signup_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +21,7 @@ class LixoStudy extends StatelessWidget {
     return const GetMaterialApp(
       title: "Lixo Study",
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: SignupPage(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lixo_study/widgets/custom_button.dart';
 
 class HomeCourseCard extends StatelessWidget {
   final String imageUrl;
@@ -125,18 +126,9 @@ class HomeCourseCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    FilledButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                          padding: MaterialStateProperty.all(
-                              const EdgeInsets.symmetric(horizontal: 20)),
-                          backgroundColor: MaterialStateProperty.all(
-                              const Color(0xFF051FBF))),
-                      child: const Text(
-                        "Know More",
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    )
+                    CustomButton(
+                      onPressed: (){},
+                        text: "Know More"),
                   ],
                 )
               ],
