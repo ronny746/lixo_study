@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:lixo_study/screens/mainpage.dart';
 import 'package:lixo_study/utils/constants.dart';
 
@@ -15,6 +16,7 @@ class AuthController extends GetxController{
   final confirmPassController = TextEditingController();
 
   User? user = FirebaseAuth.instance.currentUser;
+  var box = GetStorage();
 
   register() async {
     if(passwordController.text == confirmPassController.text) {
@@ -23,6 +25,7 @@ class AuthController extends GetxController{
             .createUserWithEmailAndPassword(email: email, password: password);
         print(userCredential);
         constToast("Registered Successfully.");
+        box.write("token",user?.uid);
         Get.off(MainPage());
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
@@ -43,6 +46,7 @@ class AuthController extends GetxController{
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+      box.write("token",user?.uid);
       Get.off(MainPage());
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -61,9 +65,8 @@ class AuthController extends GetxController{
     }
   }
 
-  get_profile() async{
-    print(user);
-    print(user?.displayName);
+  logout() async{
+    box.erase();
   }
 
 }
